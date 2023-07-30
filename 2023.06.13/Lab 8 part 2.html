@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Grade Calculator</title>
+</head>
+<body>
+<h1>Grade Calculator</h1>
+
+<script>
+window.onload = function() {
+showPrompt();
+}
+function showPrompt() {
+var sum = 0;
+for (var i = 1; i <= 5; i++) {
+var mark = window.prompt(`Enter mark ${i}:`);
+sum += parseInt(mark);
+}
+var average = sum / 5;
+document.write("Total: ", sum, "<br>");
+document.write("Average: ", average.toFixed(2), "<br>");
+var gradeButton = document.createElement("button");
+gradeButton.textContent = "Calculate Grade";
+gradeButton.onclick = function() {
+calculateGrade(average);
+};
+document.body.appendChild(gradeButton);
+}
+
+function calculateGrade(average) {
+if (average > 30) {
+alert('Congrats! You passed.');
+} else 
+{
+  alert('Better luck next time.');
+  }
+}
+</script>
+</body>
+</html>
